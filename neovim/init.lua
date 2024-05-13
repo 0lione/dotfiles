@@ -98,6 +98,7 @@ require('lazy').setup({
   },
 
   { 'kdheepak/lazygit.nvim', cmd = 'LazyGit' },
+  { "nvim-neotest/nvim-nio" },
 
   {
     'rmagatti/auto-session',
@@ -128,12 +129,12 @@ require('lazy').setup({
   {
     'github/copilot.vim',
     config = function()
-      vim.keymap.set('i', "\\", 'copilot#Accept("\\<CR>")', {
+      vim.keymap.set('i', "<Tab>", 'copilot#Accept("<Tab>")', {
         expr = true,
         replace_keycodes = false
       })
       vim.g.copilot_no_tab_map = true
-      vim.keymap.set('i', '<C-\\>', '<Plug>(copilot-next)')
+      vim.keymap.set('i', '<C-|>', '<Plug>(copilot-next)')
     end,
 
   },
@@ -233,7 +234,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
   {
     'lewis6991/gitsigns.nvim',
     config = true,
@@ -318,7 +319,7 @@ require('lazy').setup({
   --    },
   --  },
 
-  { "catppuccin/nvim",        name = "catppuccin", priority = 1000 },
+  { "catppuccin/nvim",      name = "catppuccin", priority = 1000 },
   {
     "folke/tokyonight.nvim",
     lazy = false,
